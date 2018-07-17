@@ -4,6 +4,9 @@ import HomeLogin from '../components/homeLogin';
 import HomeFeature1 from '../components/homeFeature1';
 import HomeFeature2 from '../components/homeFeature2';
 import HomeFeature3 from '../components/homeFeature3';
+import HomeFeature4 from '../components/homeFeature4';
+import HomeFeature5 from '../components/homeFeature5';
+import HomeFeature6 from '../components/homeFeature6';
 import '../assets/style/app.less'
 
 class App extends Component {
@@ -15,6 +18,9 @@ class App extends Component {
         <HomeFeature1/>
         <HomeFeature2/>
         <HomeFeature3/>
+        <HomeFeature4/>
+        <HomeFeature5/>
+        <HomeFeature6/>
       </div>
     );
   }
