@@ -7,6 +7,7 @@ import HomeFeature3 from '../components/homeFeature3';
 import HomeFeature4 from '../components/homeFeature4';
 import HomeFeature5 from '../components/homeFeature5';
 import HomeFeature6 from '../components/homeFeature6';
+import Footer from '../components/footer';
 import '../assets/style/app.less'
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
         <HomeFeature4/>
         <HomeFeature5/>
         <HomeFeature6/>
+        <Footer/>
       </div>
     );
   }
