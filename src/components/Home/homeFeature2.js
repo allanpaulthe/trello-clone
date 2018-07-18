@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Picture } from 'react-responsive-picture';
-import Button from '../components/button';
-import '../assets/style/homefeature2.less';
+import Button from '../../components/Home/button';
+import '../../assets/style/Home/homefeature2.less';
 
 class HomeFeature2 extends Component {
     render() {

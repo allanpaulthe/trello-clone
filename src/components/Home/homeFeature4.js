@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../assets/style/homefeature4.less'
+import '../../assets/style/Home/homefeature4.less'
 import { Picture } from 'react-responsive-picture';
 
 class HomeFeature4 extends Component {

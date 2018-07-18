@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Footer from '../components/footer';
-import GoogleButtton from '../components/GoogleButtton';
-import '../assets/style/login.less';
-import LoginForm from '../components/loginForm';
+import Footer from '../Home/footer';
+import GoogleButtton from '../Home/GoogleButtton';
+import '../../assets/style/Login/login.less';
+import LoginForm from './loginForm';
 
 class Login extends Component {
     constructor(props) {

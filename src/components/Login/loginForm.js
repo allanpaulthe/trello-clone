@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../assets/style/loginform.less';
+import '../../assets/style/Login/loginform.less';
 
 class LoginForm extends Component {
     constructor(props) {
@@ -13,7 +13,7 @@ class LoginForm extends Component {
                     <p>Email <span>(or username)</span> </p>
                     <input type="text" placeholder="e.g., e.hughes@downton.org.uk"/>
                     <p>Password</p>
-                    <input type="text" placeholder="e.g., ••••••••••••"/>
+                    <input type="password" placeholder="e.g., ••••••••••••"/>
                     <input type="submit" value="Log In" className="button green-button"/>
                 </div>
             </form>

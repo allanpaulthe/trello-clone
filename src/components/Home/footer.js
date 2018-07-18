@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import '../assets/style/footer.less';
+import React from 'react';
+import '../../assets/style/Home/footer.less';
 
 const Footer = () => (
     <div className="footer">

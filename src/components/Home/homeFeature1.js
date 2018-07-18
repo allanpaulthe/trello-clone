@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Button from '../components/button';
-import '../assets/style/homefeature1.less'
+import Button from '../../components/Home/button';
+import '../../assets/style/Home/homefeature1.less'
 
 class HomeFeature1 extends Component {
     render() {

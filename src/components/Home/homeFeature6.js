@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../assets/style/homefeature6.less';
+import '../../assets/style/Home/homefeature6.less';
 
 class HomeFeature6 extends Component {
     render() {

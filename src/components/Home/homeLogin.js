@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../assets/style/homelogin.less';
+import '../../assets/style/Home/homelogin.less';
 import GoogleButton from './GoogleButtton';
 
 class HomeLogin extends Component {

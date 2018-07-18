@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../assets/style/navbar.less'
+import '../../assets/style/Home/navbar.less'
 
 class NavBar extends Component {
     render() {
