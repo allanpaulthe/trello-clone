@@ -1,0 +1,74 @@
+.SubHeader {
+    display: flex;
+    color: #fff;
+    background-color: rgb(0, 121, 191);
+    padding: 8px;
+    position: relative;
+    align-items: center;
+    flex-wrap: wrap;
+    .bg {
+        cursor: pointer;
+        line-height: 32px;
+        border-radius: 3px;
+        height: 32px;
+        overflow: hidden;
+        padding: 0 8px;
+        &:hover {
+            background-color: darken(rgb(0, 121, 191), 5%)
+        }
+    }
+    .boardName {
+        font-size: 18px;
+        font-weight: 700;
+        text-decoration: none;
+        color: #f6f6f6;
+        margin: 0 4px 0 0;
+    }
+    .favo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .privacy {
+        display: flex;
+        font-size: 14px;
+        .pri {
+            display: flex;
+            div {
+                margin-right: 8px;
+            }
+        }
+    }
+    .divider {
+        float: left;
+        border-left: 1px solid hsla(0, 0%, 100%, .2);
+        height: 16px;
+        margin: 8px 4px 0 4px;
+    }
+    .uList {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    .addMember {
+        height: 28px;
+        width: 28px;
+        background: hsla(0, 0%, 100%, .3);
+        border-radius: 50%;
+        &:hover {
+            background-color: darken(hsla(0, 0%, 100%, .3), 70%);
+        }
+    }
+    .showMenuLabel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        a {
+            font-size: 14px;
+            color: #fff;
+            padding-left: 8px;
+        }
+    }
+}

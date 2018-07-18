@@ -1,0 +1,31 @@
+.boardHeader{
+    overflow: hidden;
+    padding: 4px;
+    z-index: 10;
+    height: 32px;
+    position: relative;
+    background: rgba(0,0,0,.15);
+    background-color: darken(rgb(0, 121, 191),5%);
+    display: flex;
+    align-items: center;
+    .trelloLogo{
+        display: flex;
+        align-items: center;
+        position: absolute;
+        left: 47%;
+        width:80px;
+        @media screen and (max-width:750px) {
+            left:40%;
+        }
+        @media screen and (max-width:320px) {
+            left:32%;
+        }
+        @media screen and (max-width:275px) {
+            left:29%;
+        }
+    }
+    .left{
+        position: absolute;
+        right: 0;
+    }
+}

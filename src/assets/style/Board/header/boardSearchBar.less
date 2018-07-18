@@ -1,0 +1,34 @@
+.BoardSearchBar{
+    z-index: 1;
+    cursor: pointer;
+    margin-right: 8px;
+    display: flex;
+    height: 32px;
+    background-color: hsla(0,0%,100%,.3);
+    border-radius: 3px;
+    border: none;
+    color: hsla(0,0%,100%,.5);
+    &:hover{
+        background-color: darken(hsla(0,0%,100%,.3),10%);
+    }
+    .input{
+        display: flex;
+        align-items: center;
+        input{
+            background-color:transparent;
+            border: none;
+            outline: none;
+            padding: 0 5px;
+            width: 140px;
+        }
+        @media screen and (max-width:750px) {
+            display: none;
+        }
+    }
+    .logo{
+        display: flex;
+        align-items: center;
+        margin:0 8px;
+        color: white;
+    }
+}
