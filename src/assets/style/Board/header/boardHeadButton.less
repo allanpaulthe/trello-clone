@@ -1,0 +1,46 @@
+.BoardHeadButton {
+    width: 98%;
+    display: flex;
+    padding: 0;
+    background-color: lighten(#2878bf, 50%);
+    border-radius: 3px;
+    font-size: 14px;
+    color: black;
+    margin-bottom: 3px;
+    cursor: pointer;
+    position: relative;
+    &:hover {
+        .iconList {
+            right: 3px;
+            top: 33%;
+        }
+    }
+    .box {
+        height: 36px;
+        width: 36px;
+        background-color: #2878bf;
+        border-radius: 5px 0px 0px 5px;
+    }
+    .boardname {
+        display: flex;
+        align-items: center;
+        padding-left: 12px;
+        width: 70%;
+        font-weight: 700;
+    }
+    .iconList {
+        display: flex;
+        position: absolute;
+        right: -50px;
+        align-items: center;
+        transition: right ease .015s;
+        * {
+            padding-right: 4px;
+            color: #838c91;
+            &:hover {
+                color: black;
+                font-size: 15px;
+            }
+        }
+    }
+}

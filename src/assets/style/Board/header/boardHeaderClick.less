@@ -1,0 +1,80 @@
+.BoardHeaderClicked {
+    background: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .4);
+    border-radius: 0 3px 3px 0;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    width: 280px;
+    top: 44px;
+    z-index: 60;
+    .content {
+        overflow-x: hidden;
+        overflow-y: auto;
+        margin: 8px 4px 8px 8px;
+        max-width: 576px;
+        input {
+            margin: 0 0 6px;
+            padding: 8px;
+            width: 98%;
+            transition: background 85ms ease-in, border-color 85ms ease-in;
+            box-sizing: border-box;
+            background-color: #e2e4e6;
+            border: 1px solid #cdd2d4;
+            border-radius: 3px;
+            font-size: 14px !important;
+            outline: none;
+            &:focus {
+                border: 1px solid #2878bf;
+            }
+        }
+        .tip {
+            color: #838c91;
+            margin: 0px 30px 10px 31px;
+            position: relative;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400;
+        }
+        .last {
+            text-decoration: underline;
+            font-size: 14px !important;
+            color: #838c91;
+            margin-top: 20px;
+            div {
+                margin: 4px 8px;
+                padding: 0px 8px;
+                width: 100%;
+                &:hover {
+                    background-color: darken(#fff, 20%);
+                    color: black;
+                    border-radius: 4px;
+                }
+            }
+        }
+    }
+    .common {
+        display: flex;
+        color: #8c8c8c;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: .04em;
+        line-height: 16px;
+        margin-top: 16px;
+        text-transform: uppercase;
+        margin: 0px 30px 0px 8px;
+        width: 100%;
+        align-items: center;
+        .left {
+            margin-left: auto;
+            padding: 8px !important;
+            border-radius: 4px;
+            &:hover {
+                background-color: darken(#fff, 20%);
+            }
+        }
+        * {
+            padding-right: 4px;
+        }
+    }
+}

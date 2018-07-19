@@ -1,34 +1,70 @@
-.BoardSearchBar{
+.BoardSearchBar {
     z-index: 1;
     cursor: pointer;
     margin-right: 8px;
     display: flex;
     height: 32px;
-    background-color: hsla(0,0%,100%,.3);
+    background-color: hsla(0, 0%, 100%, .3);
     border-radius: 3px;
     border: none;
-    color: hsla(0,0%,100%,.5);
-    &:hover{
-        background-color: darken(hsla(0,0%,100%,.3),10%);
+    color: hsla(0, 0%, 100%, .5);
+    pointer-events: none;
+    &:hover {
+        background-color: darken(hsla(0, 0%, 100%, .3), 10%);
     }
-    .input{
+    .input {
         display: flex;
         align-items: center;
-        input{
-            background-color:transparent;
+        input {
+            background-color: transparent;
             border: none;
             outline: none;
             padding: 0 5px;
             width: 140px;
+            transition: width .15s;
+            pointer-events: auto;
         }
         @media screen and (max-width:750px) {
             display: none;
         }
     }
-    .logo{
+    .logo {
         display: flex;
         align-items: center;
-        margin:0 8px;
-        color: white;
+        margin: 0 8px;
+        color: #fff !important;
+        pointer-events: auto;
+    }
+}
+
+.BoardSearchBarClicked {
+    display: flex;
+    background-color: #fff;
+    height: 32px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    input {
+        width: 210px;
+        border: none;
+        outline: none;
+        padding: 0 5px;
+        @media screen and (max-width:900px) {
+            width: 110px;
+        }
+    }
+    .logoSet{
+        display: flex;
+        align-items: center;
+    }
+}
+.logo {
+    display: flex;
+    align-items: center;
+    margin: 0 4px;
+    color: rgba(0,0,0,.4)!important;
+    pointer-events: auto;
+    svg:hover{
+        color: black;
     }
 }
