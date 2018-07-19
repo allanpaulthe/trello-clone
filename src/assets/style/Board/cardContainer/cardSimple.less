@@ -1,0 +1,36 @@
+.CardSimple{
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 #ccc;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 8px;
+    max-width: 300px;
+    min-height: 20px;
+    font-size: 14px;
+    &:hover{
+        background-color: darken(#fff,5%);
+        .edit{
+            display: block;
+        }
+    }
+    .text{
+        word-wrap: break-word;
+        padding: 6px;
+        margin: 0;
+        max-width: 100%;
+    }
+    .edit{
+        display: none;
+        position: absolute;
+        top:3px;
+        right: 3px;
+        padding:8px;
+        &:hover{
+            background-color: darken(#fff,10%);
+        }
+    }
+}

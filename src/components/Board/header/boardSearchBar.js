@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { search } from 'react-icons-kit/fa/';
 import { ic_close } from 'react-icons-kit/md/ic_close';
 import { exportIcon } from 'react-icons-kit/entypo/exportIcon';
-import { Icon } from 'react-icons-kit'
+import { Icon } from 'react-icons-kit';
 import '../../../assets/style/Board/header/boardSearchBar.less';
 
 

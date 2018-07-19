@@ -1,0 +1,28 @@
+.BoardBG {
+    width: auto;
+    flex-grow: 1;
+    position: relative;
+    background-color: #2878bf;
+    .boardCanvas {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin-bottom: 8px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 8px;
+        display: flex;
+        &::-webkit-scrollbar {
+            height: 12px;
+            background-color: darken(#2878bf, 10%);
+            width: 25em;
+            border-radius: 5px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: lighten(#2878bf, 20%);
+            border-radius: 5px;
+        }
+    }
+}

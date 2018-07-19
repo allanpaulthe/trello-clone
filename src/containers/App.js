@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Homepage from '../components/HomePage';
 import Login from '../components/Login/login';
 import BoardHeaderClick from '../components/Board/header/boardHeaderClick';
+import BoardBG from '../components/Board/boardBG/boardBG';
 import '../assets/style/app.less'
 
 import BoardHeader from '../components/Board/header/boardHeader';
@@ -16,6 +17,7 @@ class App extends Component {
         {/* <BoardHeaderClick/> */}
         <BoardHeader/>
         <SubHeader/>
+        <BoardBG/>
       </div>
     );
   }
