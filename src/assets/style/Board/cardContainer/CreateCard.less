@@ -1,0 +1,61 @@
+.CreateCard {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+    .input {
+        margin-right: 8px;
+        textarea {
+            width: 100%;
+            min-height: 54px;
+            word-wrap: break-word;
+            background-color: #fff;
+            border: none;
+            border-radius: 3px;
+            box-shadow: 0 1px 0 #ccc;
+            font-size: 14px;
+            padding: 4px;
+            font-family: Arial;
+            outline: none;
+            resize: none;
+            overflow: auto;
+        }
+    }
+    .list {
+        display: flex;
+        a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            padding: 3px 13px;
+            background: #5aac44;
+            box-shadow: 0 1px 0 #519839;
+            font-size: 14px;
+            border-radius: 5px;
+            &:hover{
+                background: darken(#5aac44,5%);
+            }
+        }
+        svg {
+            margin-left: 8px;
+            color: #8c8c8c;
+            cursor: pointer;
+            &:hover {
+                color: black;
+            }
+        }
+        .more {
+            svg {
+                margin-left: 0;
+            }
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding:4px 8px;
+            border-radius: 4px;
+            &:hover {
+                background-color: #cdd2d4;
+            }
+        }
+    }
+}

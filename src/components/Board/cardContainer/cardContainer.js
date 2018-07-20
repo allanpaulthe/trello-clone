@@ -6,8 +6,20 @@ import {ic_add} from 'react-icons-kit/md/ic_add';
 import CardList from './cardList';
 
 class CardContainer extends Component {
-    state = {}
+    constructor(props){
+        super(props);
+        this.state={
+            addCard:false
+        };
+        this.changeClass=this.changeClass.bind(this);
+    }
+    changeClass(){
+        this.setState({
+            addCard:!this.state.addCard
+        });
+    }
     render() {
+        let clas = this.state.addCard ? "hidden" : "addCard";
         return (
             <div className="CardContainer">
                 <div className="board">
@@ -17,10 +29,13 @@ class CardContainer extends Component {
                             <Icon size={18} icon={ic_more_horiz} />
                         </div>
                     </div>
-                    <CardList />
-                    <div className="addCard">
+                    <CardList addCard={this.state.addCard} toggle={this.changeClass}/>
+                    <div className={clas} onClick={this.changeClass}>
                         <Icon size={16} icon={ic_add} />
                         <p>Add another card</p>
+                    </div>
+                    <div className="editCard hidden">
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
                     </div>
                 </div>
             </div>

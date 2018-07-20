@@ -9,15 +9,27 @@ import BoardHeader from '../components/Board/header/boardHeader';
 import SubHeader from '../components/Board/subHeader/subHeader';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showMenu: false
+    };
+    this.changeShowMenu = this.changeShowMenu.bind(this);
+  }
+  changeShowMenu() {
+    this.setState({
+      showMenu: !this.state.showMenu
+    });
+  }
   render() {
     return (
       <div className="fullbody">
         {/* <Homepage/>
         <Login/> */}
-        {/* <BoardHeaderClick/> */}
-        <BoardHeader/>
-        <SubHeader/>
-        <BoardBG/>
+        <BoardHeaderClick show={this.state.showMenu} />
+        <BoardHeader changeShowMenu={this.changeShowMenu} />
+        <SubHeader />
+        <BoardBG />
       </div>
     );
   }
