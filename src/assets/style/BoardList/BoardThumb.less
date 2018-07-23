@@ -1,0 +1,34 @@
+.boardThumb {
+    height: 80px;
+    padding: 8px;
+    border-radius: 3px;
+    color: white;
+    background-color: #026aa7;
+    width: 150px;
+    max-width: 150px;
+    margin: 8px;
+    word-wrap: break-word;
+    position: relative;
+    cursor: pointer;
+    .star {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 10px 0;
+        svg {
+            color: gold;
+            &:hover {
+                font-size: 20px;
+                height: 18px;
+                width: 18px;
+            }
+        }
+    }
+    &:hover {
+        background-color: darken(#026aa7, 5%);
+    }
+    @media screen and (max-width: 363px) {
+        width: 120px;
+        max-width: 120px;
+    }
+}

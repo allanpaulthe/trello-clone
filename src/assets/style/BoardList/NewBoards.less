@@ -1,0 +1,25 @@
+.NewBoard {
+    height: 80px;
+    padding: 8px;
+    border-radius: 3px;
+    background-color: darken(#fff, 10%);
+    width: 150px;
+    max-width: 150px;
+    margin: 8px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    word-wrap: break-word;
+    color:darken(#fff, 45%);
+    font-size: 14px;
+    font-weight: normal;
+    cursor: pointer;
+    &:hover {
+        background-color: darken(#fff, 15%);
+        color: darken(#fff, 70%);
+    }
+    @media screen and (max-width: 363px) {
+        width: 120px;
+        max-width: 120px;
+    }
+}

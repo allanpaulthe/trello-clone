@@ -2,26 +2,26 @@ import React, { Component } from 'react';
 import '../../../assets/style/Board/cardContainer/cardContainer.less';
 import { Icon } from 'react-icons-kit';
 import { ic_more_horiz } from 'react-icons-kit/md/ic_more_horiz';
-import {ic_add} from 'react-icons-kit/md/ic_add';
+import { ic_add } from 'react-icons-kit/md/ic_add';
 import CardList from './cardList';
 
 class CardContainer extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state={
-            addCard:false
+        this.state = {
+            addCard: false,
         };
-        this.changeClass=this.changeClass.bind(this);
+        this.changeClass = this.changeClass.bind(this);
     }
-    changeClass(){
+    changeClass() {
         this.setState({
-            addCard:!this.state.addCard
+            addCard: !this.state.addCard
         });
     }
     render() {
         let clas = this.state.addCard ? "hidden" : "addCard";
         return (
-            <div className="CardContainer">
+            <div className="CardContainer" id="CardContainer">
                 <div className="board">
                     <div className="heading">
                         <p>Done</p>
@@ -33,9 +33,6 @@ class CardContainer extends Component {
                     <div className={clas} onClick={this.changeClass}>
                         <Icon size={16} icon={ic_add} />
                         <p>Add another card</p>
-                    </div>
-                    <div className="editCard hidden">
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,62 @@
+.BoardList {
+    display: flex;
+    justify-content: center;
+    svg {
+        padding: 0 8px;
+        color: #838C91;
+    }
+    .container {
+        display: flex;
+        font-size: 16px;
+        font-weight: 700;
+        @media screen and (max-width: 712px) {
+            padding-top:20px;
+        }
+        .menu {
+            width: 220px;
+            @media screen and (max-width: 712px) {
+                display: none;
+            }
+            @media screen and (max-width: 1024px) {
+                margin-left: 10px;
+            }
+        }
+        .list {
+            display: flex;
+            flex-direction: column;
+            width: 790px;
+            margin: 50px 0 0 50px;
+            @media screen and (max-width: 712px) {
+                margin: 0px;
+                justify-content: center;
+            }
+            @media screen and (max-width: 1070px) {
+                width: auto;
+            }
+            .listCategory {
+                display: flex;
+                color: darken(#838C91, 30%);
+                div {
+                    padding: 0 4px;
+                }
+                @media screen and (max-width: 712px) {
+                    justify-content: center;
+                }
+            }
+            .CreateText {
+                text-decoration: underline;
+                font-size: 14px;
+                font-weight: normal;
+                margin-left: 10px;
+                padding: 4px 10px;
+                border-radius: 5px;
+                max-width: 140px;
+                cursor: pointer;
+                margin-bottom: 20px;
+                &:hover {
+                    background-color: darken(#fff, 10%);
+                }
+            }
+        }
+    }
+}

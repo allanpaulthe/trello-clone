@@ -13,7 +13,7 @@ class CardSimple extends Component {
     }
     displayPosition() {
         var n = ReactDOM.findDOMNode(this);
-        alert(n.offsetTop);
+        this.props.editCard(n.offsetTop);
     }
     render() {
         return (

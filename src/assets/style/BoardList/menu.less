@@ -1,0 +1,34 @@
+.BoardListMenu {
+    margin-top: 50px;
+    font-size: 14px;
+    color: #838C91;
+    width: 210px;
+    font-weight: normal;
+    .c {
+        display: flex;
+        padding: 2px;
+        border-radius: 3px;
+        color: darken(#838C91, 30%);
+        font-weight: 700;
+        cursor: pointer;
+        margin: 4px auto;
+        &:hover {
+            background-color: darken(#fff, 10%);
+        }
+    }
+    .active {
+        color: #026aa7;
+        svg {
+            color: #026aa7;
+        }
+        background-color: lighten(#026aa7, 60%);
+    }
+    p {
+        padding: 0 8px;
+        font-size: 13px;
+    }
+    .CreateTeam {
+        color: #838C91;
+        font-weight: normal;
+    }
+}

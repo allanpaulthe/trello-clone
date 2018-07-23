@@ -7,6 +7,7 @@ import '../assets/style/app.less'
 
 import BoardHeader from '../components/Board/header/boardHeader';
 import SubHeader from '../components/Board/subHeader/subHeader';
+import BoardList from '../components/BoardList/BoardList';
 
 class App extends Component {
   constructor(props) {
@@ -28,8 +29,9 @@ class App extends Component {
         <Login/> */}
         <BoardHeaderClick show={this.state.showMenu} />
         <BoardHeader changeShowMenu={this.changeShowMenu} />
-        <SubHeader />
-        <BoardBG />
+        {/* <SubHeader />
+        <BoardBG /> */}
+        <BoardList/>
       </div>
     );
   }
