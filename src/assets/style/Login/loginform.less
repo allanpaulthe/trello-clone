@@ -14,19 +14,28 @@
         padding: .5em;
         width: 100%;
         line-height: normal;
-        font:inherit;
+        font: inherit;
         color: inherit;
         &:last-child {
             margin-bottom: 2em;
         }
     }
-    span{
+    span {
         color: #999;
         font-weight: 300;
     }
 }
-.green-button{
+
+.green-button {
     background: #61bd4f !important;
     box-shadow: 0 2px 0 #3f6f21 !important;
     color: #fff !important;
+    font-weight: 700 !important;
+    &:hover {
+        background: darken(#61bd4f, 5%) !important;
+    }
+}
+
+.error {
+    color: red !important;
 }

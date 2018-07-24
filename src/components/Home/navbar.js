@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import '../../assets/style/Home/navbar.less'
+import '../../assets/style/Home/navbar.less';
+import { Link } from 'react-router-dom';
 
 class NavBar extends Component {
     render() {
@@ -11,7 +12,7 @@ class NavBar extends Component {
                     </a>
                 </div>
                 <div className="right">
-                    <a className="right-button" href="">Log In</a>
+                    <Link to="/login"><a className="right-button" href="">Log In</a></Link>
                     <a className="right-button green" href="">Sign Up</a>
                 </div>
             </div>

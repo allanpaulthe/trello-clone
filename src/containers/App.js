@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom';
 import Homepage from '../components/HomePage';
 import Login from '../components/Login/login';
 import BoardHeaderClick from '../components/Board/header/boardHeaderClick';
@@ -24,15 +25,28 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="fullbody">
-        {/* <Homepage/>
-        <Login/> */}
-        <BoardHeaderClick show={this.state.showMenu} />
-        <BoardHeader changeShowMenu={this.changeShowMenu} />
-        {/* <SubHeader />
-        <BoardBG /> */}
-        <BoardList/>
-      </div>
+      <Router>
+        <div className="fullbody" id="fullbody">
+          <Route exact path="/" component={Homepage} />
+          <Route path="/login" component={Login} />
+
+
+
+          
+          <Route path="/user"
+            component={() => <BoardHeader changeShowMenu={this.changeShowMenu} />}
+          />
+          <Route path="/user"
+            component={() => <BoardHeaderClick show={this.state.showMenu} />}
+          />
+          <Route path="/user/boards" component={BoardList} />
+
+
+
+          <Route path="/user/Eachboards" component={SubHeader} />
+          <Route path="/user/Eachboards" component={BoardBG} />
+        </div>
+      </Router>
     );
   }
 }

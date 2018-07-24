@@ -18,7 +18,7 @@ class CardSimple extends Component {
     render() {
         return (
             <div className="CardSimple">
-                <p className="text">card content</p>
+                <p className="text">card content sdfsf sfgd sdgs gsg sdgsfd g gfd </p>
                 <div className="edit" onClick={this.displayPosition}>
                     <Icon size={13} icon={ic_mode_edit} />
                 </div>
