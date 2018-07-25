@@ -13,12 +13,12 @@ class CardSimple extends Component {
     }
     displayPosition() {
         var n = ReactDOM.findDOMNode(this);
-        this.props.editCard(n.offsetTop);
+        this.props.editCard(n.offsetTop, this.props.cardId);
     }
     render() {
         return (
             <div className="CardSimple">
-                <p className="text">card content sdfsf sfgd sdgs gsg sdgsfd g gfd </p>
+                <p className="text">{this.props.text}</p>
                 <div className="edit" onClick={this.displayPosition}>
                     <Icon size={13} icon={ic_mode_edit} />
                 </div>

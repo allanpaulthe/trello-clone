@@ -6,14 +6,16 @@ import { ic_lock_outline } from 'react-icons-kit/md/ic_lock_outline';
 import { ic_person_add } from 'react-icons-kit/md/ic_person_add';
 import { ic_more_horiz } from 'react-icons-kit/md/ic_more_horiz'
 import UserList from './userList';
+import { connect } from 'react-redux';
 
 class SubHeader extends Component {
     state = {}
     render() {
+        var index = this.props.location.state["index"];
         return (
             <div className="SubHeader">
                 <div className="boardName bg">
-                    my board
+                    {this.props.board.boards[index].name}
                 </div>
                 <div className="favo bg">
                     <Icon size={16} icon={ic_star_border} />
@@ -45,4 +47,21 @@ class SubHeader extends Component {
     }
 }
 
-export default SubHeader;
+const mapStateToProps = (state) => {
+    return {
+        board: state
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        add: (value) => {
+            dispatch({
+                type: "nothing",
+                payload: value
+            })
+        }
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SubHeader);

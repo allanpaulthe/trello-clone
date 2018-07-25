@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Homepage from '../components/HomePage';
 import Login from '../components/Login/login';
 import BoardHeaderClick from '../components/Board/header/boardHeaderClick';
@@ -9,6 +9,9 @@ import '../assets/style/app.less'
 import BoardHeader from '../components/Board/header/boardHeader';
 import SubHeader from '../components/Board/subHeader/subHeader';
 import BoardList from '../components/BoardList/BoardList';
+
+import { connect } from 'react-redux';
+
 
 class App extends Component {
   constructor(props) {
@@ -32,7 +35,7 @@ class App extends Component {
 
 
 
-          
+
           <Route path="/user"
             component={() => <BoardHeader changeShowMenu={this.changeShowMenu} />}
           />
@@ -51,4 +54,21 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    board: state
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    add: (value) => {
+      dispatch({
+        type: "nothing",
+        payload: value
+      })
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

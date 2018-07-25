@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../../assets/style/Login/loginform.less';
-import { BrowserRouter as Router, Redirect, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class LoginForm extends Component {
     constructor(props) {

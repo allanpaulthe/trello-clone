@@ -24,12 +24,12 @@ class CardContainer extends Component {
             <div className="CardContainer" id="CardContainer">
                 <div className="board">
                     <div className="heading">
-                        <p>Done</p>
+                        <p>{this.props.category.name}</p>
                         <div>
                             <Icon size={18} icon={ic_more_horiz} />
                         </div>
                     </div>
-                    <CardList addCard={this.state.addCard} toggle={this.changeClass}/>
+                    <CardList addCard={this.state.addCard} toggle={this.changeClass} cards={this.props.category.cards}/>
                     <div className={clas} onClick={this.changeClass}>
                         <Icon size={16} icon={ic_add} />
                         <p>Add another card</p>

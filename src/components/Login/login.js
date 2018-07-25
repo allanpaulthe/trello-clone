@@ -3,7 +3,7 @@ import Footer from '../Home/footer';
 import GoogleButtton from '../Home/GoogleButtton';
 import '../../assets/style/Login/login.less';
 import LoginForm from './loginForm';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 class Login extends Component {
     constructor(props) {
