@@ -8,7 +8,7 @@
     .container {
         display: flex;
         font-size: 16px;
-        font-weight: 700;
+        font-weight: 700; // overflow-y:scroll;
         @media screen and (max-width: 712px) {
             padding-top:20px;
         }
@@ -26,6 +26,7 @@
             flex-direction: column;
             width: 790px;
             margin: 50px 0 0 50px;
+            overflow-y: auto;
             a {
                 text-decoration: none !important;
             }

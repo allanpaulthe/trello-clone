@@ -1,8 +1,53 @@
-.fullbody{
+.fullbody {
     display: flex;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
-    textarea{
+    position: relative;
+    min-height: 100vh;
+    textarea {
         font-family: Arial;
+    }
+    .absContainer {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.75);
+        z-index: 9999;
+        transition: backgorund-color 1s ease-in;
+        overflow: auto;
+        .editCard {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            width: 256px;
+            textarea {
+                max-width: 100%;
+                resize: none;
+                border-radius: 5px;
+                margin-bottom: 15px;
+                padding: 8px;
+                font-size:14px;
+            }
+            a {
+                text-decoration: none;
+                color: #fff;
+                font-weight: 700;
+                background: #5aac44;
+                box-shadow: 0 1px 0 #519839;
+                font-size: 14px;
+                border-radius: 3px;
+                width: 30%;
+                height: 32px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                &:hover {
+                    background: darken(#5aac44, 5%);
+                }
+            }
+        }
     }
 }

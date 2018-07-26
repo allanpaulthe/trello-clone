@@ -29,7 +29,7 @@ class CardContainer extends Component {
                             <Icon size={18} icon={ic_more_horiz} />
                         </div>
                     </div>
-                    <CardList addCard={this.state.addCard} toggle={this.changeClass} cards={this.props.category.cards}/>
+                    <CardList addCard={this.state.addCard} toggle={this.changeClass} cards={this.props.category.cards} listId={this.props.listId} />
                     <div className={clas} onClick={this.changeClass}>
                         <Icon size={16} icon={ic_add} />
                         <p>Add another card</p>

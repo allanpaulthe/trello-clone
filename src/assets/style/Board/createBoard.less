@@ -1,0 +1,88 @@
+.createBoard {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.createBoardContainer {
+    padding: 8px;
+    @media screen and (max-width: 423px) {
+        text-align: center;
+    }
+    .top {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        .title {
+            width: 296px;
+            position: relative;
+            margin: 4px;
+            background-image: url(https://i.ytimg.com/vi/RqRNd4UyA4c/maxresdefault.jpg);
+            svg {
+                color: #fff;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+            }
+            input {
+                font-weight: 700;
+                background: transparent;
+                border: none;
+                font-size: 16px;
+                margin: 8px;
+                padding: 6px;
+                border-radius: 4px;
+                outline: none;
+                color: #fff;
+                &:hover,
+                &:focus {
+                    background: rgba(204, 204, 204, 0.5);
+                    color: #fff;
+                }
+            }
+            input::-webkit-input-placeholder {
+                color: white;
+                /*Change the placeholder color*/
+                opacity: 0.5;
+                /*Change the opacity between 0 and 1*/
+            }
+        }
+        .colorBox {
+            height: 104px;
+            width: 104px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            ul {
+                display: flex;
+                padding: 5px 4px 0px 4px;
+                margin: 0;
+                li {
+                    list-style: none;
+                    height: 28px;
+                    width: 28px;
+                    margin: 0px 4px 0px 0px;
+                    background-color: aquamarine;
+                    border-radius: 2px;
+                    cursor: pointer;
+                    padding: 0;
+                }
+            }
+        }
+    }
+    .button {
+        margin-top: 10px;
+        margin-left: 5px;
+        color: #b6bbbf;
+        background: #f8f9f9;
+        box-shadow: none;
+        box-shadow: none;
+        padding: 8px 16px;
+        font-size: 14px !important;
+    }
+    .green{
+        background: #24ac2a !important;
+        color: #fff !important;
+    }
+}

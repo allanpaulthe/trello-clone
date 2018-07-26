@@ -10,6 +10,9 @@ import BoardHeader from '../components/Board/header/boardHeader';
 import SubHeader from '../components/Board/subHeader/subHeader';
 import BoardList from '../components/BoardList/BoardList';
 
+import EditCard from '../components/Board//boardBG/editCard';
+import CreateBoard from "../components/Board/createBoard";
+
 import { connect } from 'react-redux';
 
 
@@ -30,6 +33,14 @@ class App extends Component {
     return (
       <Router>
         <div className="fullbody" id="fullbody">
+          {this.props.board.editCard &&
+            <EditCard />//styles in app.less
+          }
+
+          {this.props.board.newBoard &&
+            <CreateBoard />
+          }
+
           <Route exact path="/" component={Homepage} />
           <Route path="/login" component={Login} />
 
@@ -60,15 +71,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    add: (value) => {
-      dispatch({
-        type: "nothing",
-        payload: value
-      })
-    }
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);
