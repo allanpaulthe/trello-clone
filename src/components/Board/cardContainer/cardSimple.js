@@ -14,15 +14,19 @@ class CardSimple extends Component {
     _onMouseMove(e) {
         var n = ReactDOM.findDOMNode(this);
         let { x, y } = n.getBoundingClientRect();
+        this.props.setCardAndListId(this.props.cardId, this.props.listId);
         this.props.setXandY(x, y);
     }
-    setCardId() {
+    cardClickExpand() {
         this.props.setCardAndListId(this.props.cardId, this.props.listId);
+        this.props.toggleCardExpand();
     }
     render() {
         return (
-            <div className="CardSimple" onClick={this.setCardId.bind(this)}>
-                <p className="text">{this.props.text}</p>
+            <div className="absCard">
+                <div className="CardSimple" onClick={this.cardClickExpand.bind(this)}>
+                    <p className="text">{this.props.text}</p>
+                </div>
                 <div className="edit" onClick={this._onMouseMove.bind(this)}>
                     <Icon size={13} icon={ic_mode_edit} />
                 </div>
@@ -44,10 +48,16 @@ const mapDispatchToProps = (dispatch) => {
                 payload: { x: x, y: y }
             })
         },
-        setCardAndListId: (cardId,listId) => {
+        setCardAndListId: (cardId, listId) => {
             dispatch({
                 type: "setCardandLisId",
                 payload: { cardId: cardId, listId: listId }
+            })
+        },
+        toggleCardExpand: () => {
+            dispatch({
+                type: "toggleCardExpand",
+                payload: 0
             })
         }
     };

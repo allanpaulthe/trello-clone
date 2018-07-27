@@ -10,8 +10,11 @@ class StarredBoards extends Component {
     render() {
         return (
             <div className="AllBoards">
-                {[...this.props.board.boards].map((x, i) =>
-                    <BoardThumb boardName={x.name} key={i} boardIndex={i}/>
+                {[...this.props.board.boards].map((x, i) => {
+                    if (x.starred) {
+                        return <BoardThumb boardName={x.name} key={i} boardIndex={i} starred={x.starred} />
+                    }
+                }
                 )}
             </div>
         );

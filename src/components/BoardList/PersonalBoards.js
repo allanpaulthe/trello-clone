@@ -12,7 +12,7 @@ class PersonalBoards extends Component {
         return (
             <div className="AllBoards">
                 {[...this.props.board.boards].map((x, i) =>
-                    <BoardThumb boardName={x.name} key={i} boardIndex={i}/>
+                    <BoardThumb boardName={x.name} key={i} boardIndex={i} starred={x.starred}/>
                 )}
                 <NewBoard />
             </div>

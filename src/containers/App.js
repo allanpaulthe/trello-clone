@@ -12,6 +12,7 @@ import BoardList from '../components/BoardList/BoardList';
 
 import EditCard from '../components/Board//boardBG/editCard';
 import CreateBoard from "../components/Board/createBoard";
+import CardClick from '../components/Board/cardContainer/cardClick';
 
 import { connect } from 'react-redux';
 
@@ -39,6 +40,10 @@ class App extends Component {
 
           {this.props.board.newBoard &&
             <CreateBoard />
+          }
+
+          {this.props.board.cardClick &&
+            <CardClick />
           }
 
           <Route exact path="/" component={Homepage} />

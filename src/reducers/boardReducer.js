@@ -78,10 +78,10 @@ const boardReducer = (state, action) => {
             };
             const card = {
                 name: action.payload,
-                description: "this is ths description",
+                description: "",
                 comments: [
                     {
-                        comment: "this is the comment",
+                        comment: "",
                         by: "owner",
                         time: "time",
                         date: "date"
@@ -99,6 +99,24 @@ const boardReducer = (state, action) => {
                 cards: []
             }
             state.boards[state.selectedBoardId].category.push(list);
+            break;
+        case "toggleStar":
+            state = {
+                ...state
+            };
+            state.boards[state.selectedBoardId].starred = !state.boards[state.selectedBoardId].starred;
+            break;
+        case "toggleCardExpand":
+            state = {
+                ...state,
+                cardClick:!state.cardClick
+            };
+            break;
+        case "changeDescription":
+            state = {
+                ...state,
+            };
+            state.boards[state.selectedBoardId].category[state.selectedListId].cards[state.selectedCardId].description = action.payload;
             break;
         default:
             state = { ...state }

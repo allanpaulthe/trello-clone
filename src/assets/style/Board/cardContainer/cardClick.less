@@ -1,0 +1,175 @@
+.flex {
+    display: flex;
+    justify-content: center;
+    color: #838c91;
+    p {
+        margin: 0;
+    }
+    .underLine {
+        text-decoration: underline;
+    }
+    .userIcon {
+        margin-top: 10px;
+        font-size: 13px;
+        font-weight: 700;
+        background: rgba(0, 0, 0, .1);
+        color: black;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .cardExpand {
+        margin: auto;
+        width: 650px;
+        height: 50vh;
+        background-color: #edeff0;
+        border-radius: 2px;
+        position: relative;
+        max-height: 65vh;
+        padding: 16px;
+        overflow: auto;
+        @media screen and (max-width: 900px) {
+            height: 60vh;
+        }
+        @media screen and (max-width:700px) {
+            height: 70vh;
+            margin: 15vh 3vh;
+        }
+        @media screen and (max-width:360px) {
+            height: 80vh;
+            margin: 10vh 1vh;
+        }
+        &::-webkit-scrollbar {
+            height: 12px;
+            background: darken(#e2e4e6, 10%);
+            width: .35em;
+            border-radius: 5px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: darken(#e2e4e6, 20%);
+            border-radius: 5px;
+        }
+        .name {
+            color: #333;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        .cardName {
+            padding: 0 15px;
+            flex-grow: 1;
+            .listName {
+                font-size: 14px;
+            }
+            .c {
+                border-radius: 3px;
+                margin-top: 10px;
+                margin-right: 10px;
+                box-shadow: none;
+                border: none;
+                padding: 8px 16px;
+                cursor: pointer;
+                outline: none;
+            }
+            .disable{
+                background: #838c91 !important;
+            }
+            .desEmpty{
+                font-size: 13px;
+                text-decoration: underline;
+                padding-left: 10px;
+                cursor: pointer;
+            }
+            .descText{
+                font-size: 15px;
+                color: #333;
+            }
+            textarea {
+                min-height: 50px;
+                height: auto;
+                width: 100%;
+                resize: none;
+                background: rgba(0, 0, 0, .03);
+                border-color: rgba(0, 0, 0, .15);
+                box-shadow: inset 0 1px 6px rgba(0, 0, 0, .1);
+                display: block;
+                color: #333;
+                text-decoration: none;
+                padding: 6px 8px;
+                border: 1px solid #cdd2d4;
+                border-radius: 3px;
+                outline: none;
+                font-size: 15px !important;
+            }
+        }
+        .start {
+            justify-content: flex-start;
+        }
+        .aCenter {
+            margin-top: 10px;
+            cursor: pointer;
+            &:hover {
+                color: black;
+            }
+        }
+        .absIcon {
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            cursor: pointer;
+            &:hover {
+                color: black;
+            }
+        }
+        .header {
+            display: flex;
+        }
+        .Description {
+            margin-top: 25px;
+            justify-content: flex-start;
+        }
+        .comment {
+            textarea {
+                background-color: #fff;
+                border: 0;
+                padding: 8px;
+                font-size: 15px;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, .23);
+            }
+        }
+        .commentContainer {
+            margin-top: 20px;
+            .activityHeading {
+                display: flex;
+            }
+            .commentHeading {
+                padding-left: 20px;
+            }
+            .simpleComment {
+                display: flex;
+                padding: 10px 0px;
+                border-bottom: 1px solid rgba(0, 0, 0, .1);
+                .comment {
+                    margin: 10px;
+                    .name {
+                        font-size: 15px;
+                    }
+                    .commentText {
+                        padding: 6px 10px !important;
+                        background-color: #fff;
+                        border: 0;
+                        padding: 8px;
+                        font-size: 15px;
+                        box-shadow: 0 1px 2px rgba(0, 0, 0, .23);
+                        border-radius: 3px;
+                        outline: none;
+                        color: #333;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}

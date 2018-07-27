@@ -4,23 +4,24 @@ import boardReducer from './reducers/boardReducer'
 const initial = {
     newBoard: false,
     editCard: false,
+    cardClick:false,
     selectedBoardId: '',
-    selectedCardId: '',
     selectedListId: '',
+    selectedCardId: '',
     editX: 0,
     editY: 0,
     boards: [
         {
-            name: "my board dfsd",
+            name: "Welcome Board",
             starred: true,
             date: "date",
             time: "time",
             category: [
                 {
-                    name: "category name",
+                    name: "Stuff to try(this is a list)",
                     cards: [
                         {
-                            name: "card name1",
+                            name: "Cards do many cool things. Click on this card to open it and learn more...",
                             description: "this is ths description",
                             comments: [
                                 {
@@ -32,7 +33,7 @@ const initial = {
                             ]
                         },
                         {
-                            name: "card name2",
+                            name: "Add all the cards and lists you need.",
                             description: "this is ths description",
                             comments: [
                                 {
@@ -44,7 +45,7 @@ const initial = {
                             ]
                         },
                         {
-                            name: "card name3",
+                            name: "Add members to a board (via the sidebar) to collaborate, share and discuss.",
                             description: "this is ths description",
                             comments: [
                                 {
@@ -56,7 +57,7 @@ const initial = {
                             ]
                         },
                         {
-                            name: "card name4",
+                            name: "You can also see board activity, change the background and more. ",
                             description: "this is ths description",
                             comments: [
                                 {
@@ -67,7 +68,19 @@ const initial = {
                                 }
                             ]
                         }, {
-                            name: "card name5",
+                            name: "Use the + in the top menu to make your first board now.",
+                            description: "this is ths description",
+                            comments: [
+                                {
+                                    comment: "this is the comment",
+                                    by: "owner",
+                                    time: "time",
+                                    date: "date"
+                                }
+                            ]
+                        }
+                        , {
+                            name: "There's lots more magic...",
                             description: "this is ths description",
                             comments: [
                                 {
@@ -81,70 +94,10 @@ const initial = {
                     ]
                 },
                 {
-                    name: "category name",
+                    name: "Tried it(another list)",
                     cards: [
                         {
-                            name: "card name1",
-                            description: "this is ths description",
-                            comments: [
-                                {
-                                    comment: "this is the comment",
-                                    by: "owner",
-                                    time: "time",
-                                    date: "date"
-                                }
-                            ]
-                        },
-                        {
-                            name: "card name2",
-                            description: "this is ths description",
-                            comments: [
-                                {
-                                    comment: "this is the comment",
-                                    by: "owner",
-                                    time: "time",
-                                    date: "date"
-                                }
-                            ]
-                        },
-                        {
-                            name: "card name3",
-                            description: "this is ths description",
-                            comments: [
-                                {
-                                    comment: "this is the comment",
-                                    by: "owner",
-                                    time: "time",
-                                    date: "date"
-                                }
-                            ]
-                        },
-                        {
-                            name: "card name4",
-                            description: "this is ths description",
-                            comments: [
-                                {
-                                    comment: "this is the comment",
-                                    by: "owner",
-                                    time: "time",
-                                    date: "date"
-                                }
-                            ]
-                        },
-                        {
-                            name: "card name5",
-                            description: "this is ths description",
-                            comments: [
-                                {
-                                    comment: "this is the comment",
-                                    by: "owner",
-                                    time: "time",
-                                    date: "date"
-                                }
-                            ]
-                        },
-                        {
-                            name: "card name4",
+                            name: "This is a card. Drag it onto 'Tried it' to show it's done.",
                             description: "this is ths description",
                             comments: [
                                 {

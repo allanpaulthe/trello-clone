@@ -10,14 +10,18 @@ import { connect } from 'react-redux';
 
 class SubHeader extends Component {
     state = {}
+    toggleStar() {
+        this.props.toggleStar(this.props.location.state["index"]);
+    }
     render() {
         var index = this.props.location.state["index"];
+        let starClass = this.props.board.boards[index].starred ? "favo bg gold" : "favo bg"
         return (
             <div className="SubHeader">
                 <div className="boardName bg">
                     {this.props.board.boards[index].name}
                 </div>
-                <div className="favo bg">
+                <div className={starClass} onClick={this.toggleStar.bind(this)}>
                     <Icon size={16} icon={ic_star_border} />
                 </div>
                 <div className="privacy">
@@ -55,10 +59,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        add: (value) => {
+        toggleStar: (index) => {
             dispatch({
-                type: "nothing",
-                payload: value
+                type: "toggleStar",
+                payload: index
             })
         }
     };
