@@ -34,10 +34,10 @@ class CardSimple extends Component {
                 <div className="CardSimple" onClick={this.cardClickExpand.bind(this)}>
                     <p className="text">{this.props.text}</p>
                     <div className="propList">
-                        {descriptionLength > 0 && <Icon size={13} icon={alignLeft} className="icon" />}
+                        {descriptionLength > 0 && <Icon size={12} icon={alignLeft} className="icon" />}
                         {commentLength > 0 &&
                             <div className="commentNo">
-                                <Icon size={13} icon={commentO} className="icon" />
+                                <Icon size={12} icon={commentO} className="icon" />
                                 <p>{commentLength}</p>
                             </div>
                         }
