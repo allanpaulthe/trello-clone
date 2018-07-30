@@ -27,6 +27,20 @@ const boardReducer = (state, action) => {
                 draggingListId: action.payload
             };
             break;
+        case "changeDropList":
+            state = {
+                ...state,
+                droppingListId: action.payload
+            };
+            break;
+        case "checkDrop":
+            state = {
+                ...state
+            };
+            var temp =state.boards[state.selectedBoardId].category[state.draggingListId];
+            state.boards[state.selectedBoardId].category[state.draggingListId] = state.boards[state.selectedBoardId].category[state.droppingListId];
+            state.boards[state.selectedBoardId].category[state.droppingListId] = temp;
+            break;
         case "setCardandLisId":
             state = {
                 ...state,

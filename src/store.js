@@ -10,6 +10,7 @@ const initial = {
     selectedListId: '',
     selectedCardId: '',
     draggingListId: '',
+    droppingListId: '',
     editX: 0,
     editY: 0,
     boards: [

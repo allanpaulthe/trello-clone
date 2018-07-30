@@ -22,10 +22,10 @@ class CardContainer extends Component {
         });
     }
     render() {
-        const { isDragging, connectDragSource } = this.props;
-        let dragStyle = isDragging ? "CardContainer drag" : "CardContainer";
+        const { isDragging, connectDragSource, connectDropTarget, isOver } = this.props;
+        let dragStyle = isDragging || isOver ? "CardContainer drag" : "CardContainer";
         let clas = this.state.addCard ? "hidden" : "addCard";
-        return connectDragSource(
+        return connectDragSource(connectDropTarget(
             <div className={dragStyle} id="CardContainer">
                 <div className="board">
                     <div className="heading">
@@ -41,7 +41,7 @@ class CardContainer extends Component {
                     </div>
                 </div>
             </div>
-        );
+        ));
     }
 }
 const Types = {
@@ -56,7 +56,25 @@ const itemSource = {
         }
     },
     endDrag(props) {
-        /* code here */
+        props.changeDragList(props.listId);
+        return {
+            listId: props.listId
+        }
+    }
+}
+
+const itemTarget = {
+    hover(props, monitor, component) {
+        props.changeDropList(props.listId);
+        return {
+            listId: props.listId
+        }
+    },
+    drop(props, monitor, component) {
+        props.checkDrop(props.listId);
+        return {
+            listId: props.listId
+        }
     }
 }
 
@@ -64,6 +82,12 @@ function collect(connect, monitor) {
     return {
         connectDragSource: connect.dragSource(),
         isDragging: monitor.isDragging()
+    }
+}
+function collectTarget(connect, monitor) {
+    return {
+        isOver: monitor.isOver(),
+        connectDropTarget: connect.dropTarget()
     }
 }
 
@@ -81,6 +105,18 @@ const mapDispatchToProps = (dispatch) => {
                 payload: listId
             })
         },
+        changeDropList: (listId) => {
+            dispatch({
+                type: "changeDropList",
+                payload: listId
+            })
+        },
+        checkDrop: (listId) => {
+            dispatch({
+                type: "checkDrop",
+                payload: listId
+            })
+        },
     };
 };
-export default connect(mapStateToProps, mapDispatchToProps)(DragSource(Types.ITEM, itemSource, collect)(CardContainer));
+export default connect(mapStateToProps, mapDispatchToProps)(DragSource(Types.ITEM, itemSource, collect)((DropTarget(Types.ITEM, itemTarget, collectTarget))(CardContainer)));
