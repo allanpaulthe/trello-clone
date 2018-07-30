@@ -4,6 +4,9 @@ import { Icon } from 'react-icons-kit';
 import { ic_more_horiz } from 'react-icons-kit/md/ic_more_horiz';
 import { ic_add } from 'react-icons-kit/md/ic_add';
 import CardList from './cardList';
+import { DragSource } from 'react-dnd';
+import { DropTarget } from 'react-dnd';
+import { connect } from 'react-redux';
 
 class CardContainer extends Component {
     constructor(props) {
@@ -19,9 +22,11 @@ class CardContainer extends Component {
         });
     }
     render() {
+        const { isDragging, connectDragSource } = this.props;
+        let dragStyle = isDragging ? "CardContainer drag" : "CardContainer";
         let clas = this.state.addCard ? "hidden" : "addCard";
-        return (
-            <div className="CardContainer" id="CardContainer">
+        return connectDragSource(
+            <div className={dragStyle} id="CardContainer">
                 <div className="board">
                     <div className="heading">
                         <p>{this.props.category.name}</p>
@@ -39,5 +44,43 @@ class CardContainer extends Component {
         );
     }
 }
+const Types = {
+    ITEM: 'CardList'
+}
 
-export default CardContainer;
+const itemSource = {
+    beginDrag(props) {
+        props.changeDragList(props.listId);
+        return {
+            listId: props.listId
+        }
+    },
+    endDrag(props) {
+        /* code here */
+    }
+}
+
+function collect(connect, monitor) {
+    return {
+        connectDragSource: connect.dragSource(),
+        isDragging: monitor.isDragging()
+    }
+}
+
+const mapStateToProps = (state) => {
+    return {
+        board: state
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        changeDragList: (listId) => {
+            dispatch({
+                type: "changeDragList",
+                payload: listId
+            })
+        },
+    };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(DragSource(Types.ITEM, itemSource, collect)(CardContainer));

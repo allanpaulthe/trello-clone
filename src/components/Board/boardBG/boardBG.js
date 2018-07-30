@@ -4,6 +4,8 @@ import CardContainer from '../cardContainer/cardContainer';
 import { Icon } from 'react-icons-kit';
 import { ic_close } from 'react-icons-kit/md/ic_close';
 import { connect } from 'react-redux';
+import HTML5Backend from 'react-dnd-html5-backend';
+import { DragDropContext } from 'react-dnd';
 class BoardBG extends Component {
     constructor(props) {
         super(props);
@@ -90,4 +92,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(BoardBG);
+export default  DragDropContext(HTML5Backend)(connect(mapStateToProps, mapDispatchToProps)(BoardBG));

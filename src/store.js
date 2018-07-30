@@ -9,6 +9,7 @@ const initial = {
     selectedBoardId: '',
     selectedListId: '',
     selectedCardId: '',
+    draggingListId: '',
     editX: 0,
     editY: 0,
     boards: [

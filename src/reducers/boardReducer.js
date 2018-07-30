@@ -21,6 +21,12 @@ const boardReducer = (state, action) => {
                 selectedBoardId: action.payload
             };
             break;
+        case "changeDragList":
+            state = {
+                ...state,
+                draggingListId: action.payload
+            };
+            break;
         case "setCardandLisId":
             state = {
                 ...state,
