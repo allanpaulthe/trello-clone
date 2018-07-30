@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import '../../../assets/style/Board/cardContainer/cardSimple.less';
 import { Icon } from 'react-icons-kit';
 import { ic_mode_edit } from 'react-icons-kit/md/ic_mode_edit';
+import { commentO } from 'react-icons-kit/fa/commentO';
+import { alignLeft } from 'react-icons-kit/fa/alignLeft';
 import { connect } from 'react-redux';
 import ReactDOM from 'react-dom';
 
@@ -22,10 +24,24 @@ class CardSimple extends Component {
         this.props.toggleCardExpand();
     }
     render() {
+        let cardId = this.props.cardId;
+        let listId = this.props.listId;
+        let boardId = this.props.board.selectedBoardId;
+        let descriptionLength = this.props.board.boards[boardId].category[listId].cards[cardId].description.length;
+        let commentLength = this.props.board.boards[boardId].category[listId].cards[cardId].comments.length;
         return (
             <div className="absCard">
                 <div className="CardSimple" onClick={this.cardClickExpand.bind(this)}>
                     <p className="text">{this.props.text}</p>
+                    <div className="propList">
+                        {descriptionLength > 0 && <Icon size={13} icon={alignLeft} className="icon" />}
+                        {commentLength > 0 &&
+                            <div className="commentNo">
+                                <Icon size={13} icon={commentO} className="icon" />
+                                <p>{commentLength}</p>
+                            </div>
+                        }
+                    </div>
                 </div>
                 <div className="edit" onClick={this._onMouseMove.bind(this)}>
                     <Icon size={13} icon={ic_mode_edit} />

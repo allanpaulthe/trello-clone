@@ -23,7 +23,8 @@ class CardClick extends Component {
         let selectedList = this.props.board.selectedListId;
         let selectedCard = this.props.board.selectedCardId;
         let cardName = this.props.board.boards[selectedBoard].category[selectedList].cards[selectedCard].name;
-        let listName=this.props.board.boards[selectedBoard].category[selectedList].name;
+        let listName = this.props.board.boards[selectedBoard].category[selectedList].name;
+        let commentList = this.props.board.boards[selectedBoard].category[selectedList].cards[selectedCard].comments;
         return (
             <div className="absContainer flex">
                 <div className="cardExpand">
@@ -43,7 +44,11 @@ class CardClick extends Component {
                             <Icon size={18} icon={alignCenter} />
                             <p className="commentHeading name">Activity</p>
                         </div>
-                        <SimpleComment />
+                        {[...commentList.map((x, i) =>
+                            <SimpleComment
+                                comment={x.comment}
+                            />
+                        )]}
                     </div>
                     <div className="absIcon" onClick={this.toggleExpand.bind(this)}>
                         <Icon size={24} icon={ic_close} />

@@ -20,15 +20,7 @@ import { connect } from 'react-redux';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      showMenu: false
-    };
-    this.changeShowMenu = this.changeShowMenu.bind(this);
-  }
-  changeShowMenu() {
-    this.setState({
-      showMenu: !this.state.showMenu
-    });
+    this.state = {};
   }
   render() {
     return (
@@ -53,10 +45,10 @@ class App extends Component {
 
 
           <Route path="/user"
-            component={() => <BoardHeader changeShowMenu={this.changeShowMenu} />}
+            component={() => <BoardHeader />}
           />
           <Route path="/user"
-            component={() => <BoardHeaderClick show={this.state.showMenu} />}
+            component={() => <BoardHeaderClick />}
           />
           <Route path="/user/boards" component={BoardList} />
 

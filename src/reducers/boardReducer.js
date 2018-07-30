@@ -40,6 +40,12 @@ const boardReducer = (state, action) => {
                 newBoard: !state.newBoard
             };
             break;
+        case "toggleMenuShow":
+            state = {
+                ...state,
+                showMenu: !state.showMenu
+            };
+            break;
         case "newBoard":
             state = {
                 ...state,
@@ -52,19 +58,12 @@ const boardReducer = (state, action) => {
                 time: "",
                 category: [
                     {
-                        name: "new list",
+                        name: "Sample list",
                         cards: [
                             {
                                 name: "sample card",
-                                description: "this is ths description",
-                                comments: [
-                                    {
-                                        comment: "this is the comment",
-                                        by: "owner",
-                                        time: "time",
-                                        date: "date"
-                                    }
-                                ]
+                                description: "This is the description of the card",
+                                comments: []
                             }
                         ]
                     }
@@ -79,14 +78,7 @@ const boardReducer = (state, action) => {
             const card = {
                 name: action.payload,
                 description: "",
-                comments: [
-                    {
-                        comment: "",
-                        by: "owner",
-                        time: "time",
-                        date: "date"
-                    }
-                ]
+                comments: []
             }
             state.boards[state.selectedBoardId].category[state.selectedListId].cards.push(card);
             break;
@@ -106,10 +98,16 @@ const boardReducer = (state, action) => {
             };
             state.boards[state.selectedBoardId].starred = !state.boards[state.selectedBoardId].starred;
             break;
+        case "toggleStarFromMenu":
+            state = {
+                ...state
+            };
+            state.boards[action.payload].starred = !state.boards[action.payload].starred;
+            break;
         case "toggleCardExpand":
             state = {
                 ...state,
-                cardClick:!state.cardClick
+                cardClick: !state.cardClick
             };
             break;
         case "changeDescription":
@@ -117,6 +115,18 @@ const boardReducer = (state, action) => {
                 ...state,
             };
             state.boards[state.selectedBoardId].category[state.selectedListId].cards[state.selectedCardId].description = action.payload;
+            break;
+        case "addComment":
+            state = {
+                ...state,
+            };
+            const comment = {
+                comment: action.payload,
+                by: "owner",
+                time: "time",
+                date: "date"
+            }
+            state.boards[state.selectedBoardId].category[state.selectedListId].cards[state.selectedCardId].comments.push(comment);
             break;
         default:
             state = { ...state }

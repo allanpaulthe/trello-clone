@@ -6,6 +6,7 @@ import { clockO } from 'react-icons-kit/fa/clockO';
 import { books } from 'react-icons-kit/icomoon/books';
 import { Icon } from 'react-icons-kit';
 import BoardHeadbutton from './boardHeadButton';
+import { connect } from 'react-redux';
 
 class BoardHeaderClicked extends Component {
     constructor(props) {
@@ -14,7 +15,8 @@ class BoardHeaderClicked extends Component {
         };
     }
     render() {
-        let clas = this.props.show ? "BoardHeaderClicked" : "hidden";
+        let clas = this.props.board.showMenu ? "BoardHeaderClicked" : "hidden";
+        let boards = this.props.board.boards;
         return (
             <div className={clas}>
                 <div className="content">
@@ -31,8 +33,16 @@ class BoardHeaderClicked extends Component {
                             <div className="tip">
                                 Star your most important boards to keep them right at your fingertips.
                             </div>
+                            {[...boards].map((x, i) => {
+                                if (x.starred) {
+                                    return <BoardHeadbutton name={x.name} starred={x.starred} boardIndex={i} />
+                                }
+                                else {
+                                    return false;
+                                }
+                            })}
                         </div>
-                        <div>
+                        {/* <div>
                             <div className="common">
                                 <Icon size={13} icon={clockO} />
                                 <p>RECENT BOARDS</p>
@@ -40,9 +50,7 @@ class BoardHeaderClicked extends Component {
                                     <Icon size={12} icon={minus} />
                                 </div>
                             </div>
-                            <BoardHeadbutton />
-                            <BoardHeadbutton />
-                        </div>
+                        </div> */}
                         <div>
                             <div className="common">
                                 <Icon size={13} icon={books} />
@@ -51,7 +59,9 @@ class BoardHeaderClicked extends Component {
                                     <Icon size={12} icon={minus} />
                                 </div>
                             </div>
-                            <BoardHeadbutton />
+                            {[...boards].map((x, i) =>
+                                <BoardHeadbutton name={x.name} starred={x.starred} boardIndex={i} />
+                            )}
                         </div>
                         <div className="last">
                             <div>Create new board</div>
@@ -64,5 +74,21 @@ class BoardHeaderClicked extends Component {
         );
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        board: state
+    };
+};
 
-export default BoardHeaderClicked;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addComment: (comment) => {
+            dispatch({
+                type: "addComment",
+                payload: comment
+            })
+        },
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(BoardHeaderClicked);

@@ -13,7 +13,7 @@ class SimpleComment extends Component {
                             </div>
                 <div className="comment">
                     <p className="name">Alan Paul</p>
-                    <p className="commentText">This is the comment</p>
+                    <p className="commentText">{this.props.comment}</p>
                 </div>
             </div>
         );

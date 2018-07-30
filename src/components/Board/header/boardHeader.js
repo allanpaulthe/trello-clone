@@ -4,6 +4,7 @@ import BoardSearchBar from './boardSearchBar';
 import BoardHeaderLeft from './BoardHeaderLeft';
 import trelloFull from '../../../assets/images/trelloFull.png';
 import '../../../assets/style/Board/header/boardheader.less';
+import { connect } from 'react-redux';
 
 class BoardHeader extends Component {
     constructor(props) {
@@ -11,12 +12,12 @@ class BoardHeader extends Component {
         this.handleMenuToggle = this.handleMenuToggle.bind(this);
     }
     handleMenuToggle() {
-        this.props.changeShowMenu();
+        this.props.toggleMenuShow();
     }
     render() {
         return (
             <div class="boardHeader">
-                <div  onClick={this.handleMenuToggle}>
+                <div onClick={this.handleMenuToggle}>
                     <BoardLogo />
                 </div>
                 <BoardSearchBar />
@@ -30,6 +31,21 @@ class BoardHeader extends Component {
         );
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        board: state
+    };
+};
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        toggleMenuShow: () => {
+            dispatch({
+                type: "toggleMenuShow",
+                payload: 0
+            })
+        }
+    };
+};
 
-export default BoardHeader;
+export default connect(mapStateToProps, mapDispatchToProps)(BoardHeader);

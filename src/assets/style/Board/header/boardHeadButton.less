@@ -15,6 +15,13 @@
             top: 33%;
         }
     }
+    a {
+        width: 73%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        text-decoration: none;
+    }
     .box {
         height: 36px;
         width: 36px;
@@ -34,13 +41,21 @@
         right: -50px;
         align-items: center;
         transition: right ease .015s;
-        * {
+        svg {
             padding-right: 4px;
             color: #838c91;
+            font-weight: 700;
             &:hover {
                 color: black;
-                font-size: 15px;
+                font-size: 16px;
             }
+        }
+    }
+    .starred {
+        right: 3px !important;
+        top: 33% !important;
+        svg {
+            color: goldenrod !important;
         }
     }
 }

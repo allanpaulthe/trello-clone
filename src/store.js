@@ -4,7 +4,8 @@ import boardReducer from './reducers/boardReducer'
 const initial = {
     newBoard: false,
     editCard: false,
-    cardClick:false,
+    cardClick: false,
+    showMenu: false,
     selectedBoardId: '',
     selectedListId: '',
     selectedCardId: '',
@@ -123,8 +124,15 @@ function loadState() {
         if (serializedState === null) {
             return this.initializeState();
         }
-
-        return JSON.parse(serializedState);
+        var loadedState = JSON.parse(serializedState);
+        loadedState = {
+            ...loadedState,
+            newBoard: false,
+            editCard: false,
+            cardClick: false,
+            showMenu: false
+        }
+        return loadedState;
     }
     catch (err) {
         return initializeState();
