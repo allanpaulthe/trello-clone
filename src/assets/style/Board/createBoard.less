@@ -17,7 +17,8 @@
             width: 296px;
             position: relative;
             margin: 4px;
-            background-image: url(https://i.ytimg.com/vi/RqRNd4UyA4c/maxresdefault.jpg);
+            background-size: 300px 170px;
+            background-repeat: no-repeat;
             svg {
                 color: #fff;
                 position: absolute;
@@ -63,10 +64,16 @@
                     height: 28px;
                     width: 28px;
                     margin: 0px 4px 0px 0px;
-                    background-color: aquamarine;
+                    background-size: 28px 28px;
                     border-radius: 2px;
                     cursor: pointer;
                     padding: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    svg {
+                        color: #fff;
+                    }
                 }
             }
         }
@@ -81,7 +88,7 @@
         padding: 8px 16px;
         font-size: 14px !important;
     }
-    .green{
+    .green {
         background: #24ac2a !important;
         color: #fff !important;
     }

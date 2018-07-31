@@ -14,9 +14,36 @@ class BoardBG extends Component {
             listTitle: ''
         };
     }
-    componentDidMount() {
+    componentDidUpdate(){
+        let selectedBoardId = this.props.board.selectedBoardId;
+        let imageListId = this.props.board.boards[selectedBoardId].BoardImage[0];
+        let imageElementId = this.props.board.boards[selectedBoardId].BoardImage[1];
+        let newBoardPic = this.props.newBoardPic;
         document.getElementById('fullbody').style.height = '100vh';
         document.getElementById('fullbody').style.maxHeight = '100vh';
+        if (imageListId < 2) {
+            document.getElementById('fullbody').style.backgroundImage = `url(${newBoardPic[imageListId][imageElementId]})`;
+            document.getElementById('fullbody').style.backgroundSize = '100vw 100vh';
+        }
+        else{
+            document.getElementById('fullbody').style.backgroundImage='';
+            document.getElementById('fullbody').style.backgroundColor = newBoardPic[imageListId][imageElementId];
+        }
+    }
+    componentDidMount() {
+        let selectedBoardId = this.props.board.selectedBoardId;
+        let imageListId = this.props.board.boards[selectedBoardId].BoardImage[0];
+        let imageElementId = this.props.board.boards[selectedBoardId].BoardImage[1];
+        let newBoardPic = this.props.newBoardPic;
+        document.getElementById('fullbody').style.height = '100vh';
+        document.getElementById('fullbody').style.maxHeight = '100vh';
+        if (imageListId < 2) {
+            document.getElementById('fullbody').style.backgroundImage = `url(${newBoardPic[imageListId][imageElementId]})`;
+        }
+        else{
+            document.getElementById('fullbody').style.backgroundColor = newBoardPic[imageListId][imageElementId];
+        }
+        document.getElementById('fullbody').style.backgroundSize = '100vw 100vh';
     }
     toggleNewList() {
         this.setState({
@@ -28,15 +55,15 @@ class BoardBG extends Component {
             listTitle: event.target.value
         })
     }
-    handleSubmit(){
-        if(this.state.listTitle.length===0){
+    handleSubmit() {
+        if (this.state.listTitle.length === 0) {
             this.toggleNewList();
             return false;
         }
-        else{
+        else {
             this.props.newList(this.state.listTitle);
             this.setState({
-                listTitle:''
+                listTitle: ''
             })
             this.toggleNewList();
         }
@@ -46,7 +73,7 @@ class BoardBG extends Component {
         let clas1 = this.state.newList ? "hidden" : "createNewList";
         let clas2 = this.state.newList ? "expandNewList" : "hidden";
         return (
-            <div className="BoardBG">
+            <div className="BoardBG" id="BoardBG">
                 <div className="boardCanvas">
                     {[...(this.props.board.boards[index].category)].map((x, i) =>
                         <CardContainer
@@ -77,7 +104,8 @@ class BoardBG extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        board: state
+        board: state,
+        newBoardPic: state.newBoardPic
     };
 };
 
@@ -92,4 +120,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default  DragDropContext(HTML5Backend)(connect(mapStateToProps, mapDispatchToProps)(BoardBG));
+export default DragDropContext(HTML5Backend)(connect(mapStateToProps, mapDispatchToProps)(BoardBG));

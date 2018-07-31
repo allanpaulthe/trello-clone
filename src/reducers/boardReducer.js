@@ -21,6 +21,13 @@ const boardReducer = (state, action) => {
                 selectedBoardId: action.payload
             };
             break;
+        case "changeBgPic":
+            state = {
+                ...state,
+            };
+            state.selectedNewBoardImage[0] = action.payload.listId;
+            state.selectedNewBoardImage[1] = action.payload.elementId;
+            break;
         case "changeDragList":
             state = {
                 ...state,
@@ -63,7 +70,7 @@ const boardReducer = (state, action) => {
             if (state.draggingCardId < state.droppingCardId) {
                 state.boards[state.selectedBoardId].category[state.droppingListId].cards.splice(state.droppingCardId + 1, 0, t);
             }
-            else{
+            else {
                 state.boards[state.selectedBoardId].category[state.droppingListId].cards.splice(state.droppingCardId, 0, t);
             }
             state.boards[state.selectedBoardId].category[state.draggingListId].cards = state.boards[state.selectedBoardId].category[state.draggingListId].cards.filter(function (n) { return n != undefined });
@@ -103,6 +110,7 @@ const boardReducer = (state, action) => {
                 starred: false,
                 date: "",
                 time: "",
+                BoardImage: state.selectedNewBoardImage,
                 category: [
                     {
                         name: "Sample list",

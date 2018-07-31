@@ -16,7 +16,7 @@ class BoardHeader extends Component {
     }
     render() {
         return (
-            <div class="boardHeader">
+            <div className="boardHeader" id="boardHeader">
                 <div onClick={this.handleMenuToggle}>
                     <BoardLogo />
                 </div>

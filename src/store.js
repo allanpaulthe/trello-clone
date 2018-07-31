@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-import boardReducer from './reducers/boardReducer'
+import boardReducer from './reducers/boardReducer';
 
 const initial = {
     newBoard: false,
@@ -15,12 +15,30 @@ const initial = {
     droppingCardId: '',
     editX: 0,
     editY: 0,
+    selectedNewBoardImage: [0, 0],
+    newBoardPic: [
+        ['https://images.pexels.com/photos/1265584/pexels-photo-1265584.jpeg?auto=compress&cs=tinysrgb&h=350',
+            'https://images.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg?auto=compress&cs=tinysrgb&h=350',
+            'https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&h=350'
+        ],
+        [
+            ' https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&h=350',
+            'https://images.pexels.com/photos/172289/pexels-photo-172289.jpeg?auto=compress&cs=tinysrgb&h=350',
+            'https://images.pexels.com/photos/73813/balkan-anemone-flower-blossom-bloom-73813.jpeg?auto=compress&cs=tinysrgb&h=350'
+        ],
+        [
+            '#2878bf',
+            '#22313F',
+            '#FABE58'
+        ]
+    ],
     boards: [
         {
             name: "Welcome Board",
             starred: true,
             date: "date",
             time: "time",
+            BoardImage: [2, 0],
             category: [
                 {
                     name: "Stuff to try(this is a list)",
@@ -146,7 +164,6 @@ function loadState() {
 function initializeState() {
     return initial;
 };
-
 
 const store = createStore(boardReducer, loadState());
 

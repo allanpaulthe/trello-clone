@@ -17,7 +17,7 @@ class SubHeader extends Component {
         var index = this.props.location.state["index"];
         let starClass = this.props.board.boards[index].starred ? "favo bg gold" : "favo bg"
         return (
-            <div className="SubHeader">
+            <div className="SubHeader" id="SubHeader">
                 <div className="boardName bg">
                     {this.props.board.boards[index].name}
                 </div>

@@ -4,13 +4,23 @@ import Menu from './menu';
 import StarredBoards from './StarredBoards';
 import PersonalBoards from './PersonalBoards';
 import { Icon } from 'react-icons-kit';
-import {starO} from 'react-icons-kit/fa/starO';
-import {userO} from 'react-icons-kit/fa/userO';
+import { starO } from 'react-icons-kit/fa/starO';
+import { userO } from 'react-icons-kit/fa/userO';
 
 class BoardList extends Component {
     constructor(props) {
         super(props);
         this.state = {};
+    }
+    componentDidUpdate() {
+        document.getElementById('fullbody').style.backgroundImage = '';
+        document.getElementById('fullbody').style.backgroundColor = '#fff';
+        document.getElementById('boardHeader').style.backgroundColor = '#2878bf';
+    }
+    componentDidMount() {
+        document.getElementById('fullbody').style.backgroundImage = '';
+        document.getElementById('fullbody').style.backgroundColor = '#fff';
+        document.getElementById('boardHeader').style.backgroundColor = '#2878bf';
     }
     render() {
         return (
@@ -24,12 +34,12 @@ class BoardList extends Component {
                             <Icon size={16} icon={starO} />
                             <div>Starred Boards</div>
                         </div>
-                        <StarredBoards/>
+                        <StarredBoards />
                         <div className="listCategory">
                             <Icon size={16} icon={userO} />
                             <div>Personal Boards</div>
                         </div>
-                        <PersonalBoards/>
+                        <PersonalBoards />
                         <div className="CreateText">
                             Create a new team...
                         </div>

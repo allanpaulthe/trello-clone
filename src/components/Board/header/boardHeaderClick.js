@@ -42,15 +42,6 @@ class BoardHeaderClicked extends Component {
                                 }
                             })}
                         </div>
-                        {/* <div>
-                            <div className="common">
-                                <Icon size={13} icon={clockO} />
-                                <p>RECENT BOARDS</p>
-                                <div className="left">
-                                    <Icon size={12} icon={minus} />
-                                </div>
-                            </div>
-                        </div> */}
                         <div>
                             <div className="common">
                                 <Icon size={13} icon={books} />

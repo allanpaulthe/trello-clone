@@ -15,11 +15,32 @@ class BoardThumb extends Component {
         this.props.changeBoard(this.props.boardIndex);
         this.props.toggleStar(this.props.boardIndex);
     }
+    setBG() {
+        let BoardImage = this.props.board.boards[this.props.boardIndex].BoardImage;
+        let listIndex = BoardImage[0];
+        let elementIndex = BoardImage[1];
+
+        let newBoardPic = this.props.board.newBoardPic;
+        if (listIndex < 2) {
+            return {
+                backgroundImage: `url(${newBoardPic[listIndex][elementIndex]})`,
+                backgroundSize: '180px 10x0px',
+                backgroundRepeat:'no-repeat'
+            }
+        }
+        else {
+            return { backgroundColor: newBoardPic[listIndex][elementIndex] }
+        }
+
+    }
     render() {
         return (
             <div className="relativeParent">
                 <Link to={{ pathname: '/user/Eachboards', state: { index: this.props.boardIndex } }}>
-                    <div className="boardThumb" onClick={this.handleClick.bind(this)}>
+                    <div className="boardThumb"
+                        onClick={this.handleClick.bind(this)}
+                        style={this.setBG()}
+                    >
                         <div>{this.props.boardName}</div>
                     </div>
                 </Link>
