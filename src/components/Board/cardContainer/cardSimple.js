@@ -6,6 +6,8 @@ import { commentO } from 'react-icons-kit/fa/commentO';
 import { alignLeft } from 'react-icons-kit/fa/alignLeft';
 import { connect } from 'react-redux';
 import ReactDOM from 'react-dom';
+import { DragSource } from 'react-dnd';
+import { DropTarget } from 'react-dnd';
 
 
 class CardSimple extends Component {
@@ -29,9 +31,11 @@ class CardSimple extends Component {
         let boardId = this.props.board.selectedBoardId;
         let descriptionLength = this.props.board.boards[boardId].category[listId].cards[cardId].description.length;
         let commentLength = this.props.board.boards[boardId].category[listId].cards[cardId].comments.length;
-        return (
+        const { isDragging, connectDragSource, connectDropTarget, isOver } = this.props;
+        let dragClass = isDragging || isOver ? "CardSimple dragCard" : "CardSimple";
+        return connectDragSource(connectDropTarget(
             <div className="absCard">
-                <div className="CardSimple" onClick={this.cardClickExpand.bind(this)}>
+                <div className={dragClass} onClick={this.cardClickExpand.bind(this)}>
                     <p className="text">{this.props.text}</p>
                     <div className="propList">
                         {descriptionLength > 0 && <Icon size={12} icon={alignLeft} className="icon" />}
@@ -47,9 +51,60 @@ class CardSimple extends Component {
                     <Icon size={13} icon={ic_mode_edit} />
                 </div>
             </div>
-        );
+        ));
     }
 }
+const Types = {
+    ITEM: 'SimpleCard'
+}
+
+const itemSource = {
+    beginDrag(props) {
+        props.changeDragList(props.listId);
+        props.changeDragCard(props.cardId);
+        return {
+            listId: props.listId
+        }
+    },
+    endDrag(props) {
+        props.changeDragList(props.listId);
+        props.changeDragCard(props.cardId);
+        return {
+            listId: props.listId
+        }
+    }
+}
+
+const itemTarget = {
+    hover(props, monitor, component) {
+        props.changeDropList(props.listId);
+        props.changeDropCard(props.cardId);
+        return {
+            listId: props.listId
+        }
+    },
+    drop(props, monitor, component) {
+        props.checkDropCard();
+        return {
+            listId: props.listId
+        }
+    }
+}
+
+function collect(connect, monitor) {
+    return {
+        connectDragSource: connect.dragSource(),
+        isDragging: monitor.isDragging()
+    }
+}
+function collectTarget(connect, monitor) {
+    return {
+        isOver: monitor.isOver(),
+        connectDropTarget: connect.dropTarget()
+    }
+}
+
+
 const mapStateToProps = (state) => {
     return {
         board: state
@@ -75,8 +130,38 @@ const mapDispatchToProps = (dispatch) => {
                 type: "toggleCardExpand",
                 payload: 0
             })
-        }
+        },
+        changeDragList: (listId) => {
+            dispatch({
+                type: "changeDragList",
+                payload: listId
+            })
+        },
+        changeDropList: (listId) => {
+            dispatch({
+                type: "changeDropList",
+                payload: listId
+            })
+        },
+        changeDragCard: (cardId) => {
+            dispatch({
+                type: "changeDragCard",
+                payload: cardId
+            })
+        },
+        changeDropCard: (cardId) => {
+            dispatch({
+                type: "changeDropCard",
+                payload: cardId
+            })
+        },
+        checkDropCard: () => {
+            dispatch({
+                type: "checkDropCard",
+                payload: 0
+            })
+        },
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CardSimple);
+export default connect(mapStateToProps, mapDispatchToProps)(DragSource(Types.ITEM, itemSource, collect)((DropTarget(Types.ITEM, itemTarget, collectTarget))(CardSimple)));

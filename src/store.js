@@ -11,6 +11,8 @@ const initial = {
     selectedCardId: '',
     draggingListId: '',
     droppingListId: '',
+    draggingCardId: '',
+    droppingCardId: '',
     editX: 0,
     editY: 0,
     boards: [

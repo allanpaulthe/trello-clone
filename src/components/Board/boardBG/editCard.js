@@ -29,7 +29,7 @@ class EditCard extends Component {
                 <div className="editCard"
                     style={{
                         top: this.props.board.editY,
-                        left: this.props.board.editX - 5
+                        left: this.props.board.editX+6
                     }}
 
                     id="editCard"

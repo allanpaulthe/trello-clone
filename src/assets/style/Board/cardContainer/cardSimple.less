@@ -1,5 +1,6 @@
 .absCard {
     position: relative;
+    background: transparent;
     .edit {
         position: absolute;
         display: none;
@@ -37,7 +38,7 @@
     }
     .text {
         word-wrap: break-word;
-        padding: 3px 6px;
+        padding: 5px 6px;
         margin: 0;
         max-width: 100%;
         line-height: 1.5em;
@@ -58,5 +59,17 @@
                 font-size: 12px;
             }
         }
+    }
+}
+
+.dragCard {
+    color: transparent;
+    svg {
+        color: transparent;
+    }
+    & + .edit {
+        svg {
+            color: transparent;
+        } 
     }
 }
