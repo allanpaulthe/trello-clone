@@ -17,14 +17,14 @@ const initial = {
     editY: 0,
     selectedNewBoardImage: [0, 0],
     newBoardPic: [
-        ['https://images.pexels.com/photos/1265584/pexels-photo-1265584.jpeg?auto=compress&cs=tinysrgb&h=350',
-            'https://images.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg?auto=compress&cs=tinysrgb&h=350',
-            'https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&h=350'
+        ['https://images.unsplash.com/photo-1530947443747-bcaaacd048d0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f4195ca00b6861f813b5d6c8cc9b84a9&auto=format&fit=crop&w=1401&q=80',
+            'https://images.unsplash.com/photo-1490237014491-822aee911b99?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c6c99dec73e55acf9dbf720ec37f6b0a&auto=format&fit=crop&w=1350&q=80',
+            'https://images.unsplash.com/photo-1484950763426-56b5bf172dbb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f176d8cadc12e08f25602e93d1388bb2&auto=format&fit=crop&w=1350&q=80'
         ],
         [
-            ' https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&h=350',
-            'https://images.pexels.com/photos/172289/pexels-photo-172289.jpeg?auto=compress&cs=tinysrgb&h=350',
-            'https://images.pexels.com/photos/73813/balkan-anemone-flower-blossom-bloom-73813.jpeg?auto=compress&cs=tinysrgb&h=350'
+            'https://images.unsplash.com/photo-1517784312427-7ec83f3de5fd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a7a1cb24e407ea0e5f420f5bf2eca5d0&auto=format&fit=crop&w=1350&q=80',
+            'https://images.unsplash.com/photo-1467173572719-f14b9fb86e5f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=14fc993a6e26bbde4869a42f7969ba02&auto=format&fit=crop&w=1351&q=80',
+            'https://images.unsplash.com/photo-1443428018053-13da55589fed?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1b35cc27d9893369c5f85d539765af84&auto=format&fit=crop&w=1350&q=80'
         ],
         [
             '#2878bf',

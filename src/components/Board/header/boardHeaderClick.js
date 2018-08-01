@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import '../../../assets/style/Board/header/boardHeaderClick.less';
 import { starO } from 'react-icons-kit/fa/starO';
 import { minus } from 'react-icons-kit/fa/minus';
-import { clockO } from 'react-icons-kit/fa/clockO';
 import { books } from 'react-icons-kit/icomoon/books';
 import { Icon } from 'react-icons-kit';
 import BoardHeadbutton from './boardHeadButton';
@@ -35,7 +34,7 @@ class BoardHeaderClicked extends Component {
                             </div>
                             {[...boards].map((x, i) => {
                                 if (x.starred) {
-                                    return <BoardHeadbutton name={x.name} starred={x.starred} boardIndex={i} />
+                                    return <BoardHeadbutton name={x.name} starred={x.starred} boardIndex={i} key={i}/>
                                 }
                                 else {
                                     return false;
@@ -51,7 +50,7 @@ class BoardHeaderClicked extends Component {
                                 </div>
                             </div>
                             {[...boards].map((x, i) =>
-                                <BoardHeadbutton name={x.name} starred={x.starred} boardIndex={i} />
+                                <BoardHeadbutton name={x.name} starred={x.starred} boardIndex={i} key={i}/>
                             )}
                         </div>
                         <div className="last">

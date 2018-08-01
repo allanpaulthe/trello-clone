@@ -14,6 +14,9 @@ class StarredBoards extends Component {
                     if (x.starred) {
                         return <BoardThumb boardName={x.name} key={i} boardIndex={i} starred={x.starred} />
                     }
+                    else{
+                        return false;
+                    }
                 }
                 )}
             </div>

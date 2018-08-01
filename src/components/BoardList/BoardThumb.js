@@ -24,8 +24,9 @@ class BoardThumb extends Component {
         if (listIndex < 2) {
             return {
                 backgroundImage: `url(${newBoardPic[listIndex][elementIndex]})`,
-                backgroundSize: '180px 10x0px',
-                backgroundRepeat:'no-repeat'
+                backgroundSize: 'cover',
+                backgroundRepeat:'no-repeat',
+                backgroundPosition: '50% 50%'
             }
         }
         else {

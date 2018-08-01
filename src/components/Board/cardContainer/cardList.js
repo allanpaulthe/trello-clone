@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import '../../../assets/style/Board/cardContainer/cardList.less';
 import CardSimple from './cardSimple';
 import CreateCard from './CreateCard';
-import ReactDOM from 'react-dom';
 import { connect } from "react-redux";
 
 class CardList extends Component {
@@ -16,7 +15,7 @@ class CardList extends Component {
         return (
             <div className="CardList">
                 {[...(this.props.cards)].map((x, i) =>
-                    <CardSimple text={x.name} cardId={i} listId={this.props.listId}/>
+                    <CardSimple text={x.name} cardId={i} listId={this.props.listId} key={i}/>
                 )}
                 {this.props.addCard &&
                     <CreateCard toggle={this.props.toggle} listId={this.props.listId}/>

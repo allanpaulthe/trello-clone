@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../../../assets/style/Board/header/boardHeadButton.less';
 import { starO } from 'react-icons-kit/fa/starO';
-import { ic_close } from 'react-icons-kit/md/ic_close';
 import { Icon } from 'react-icons-kit';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -23,7 +22,7 @@ class BoardHeadButton extends Component {
                 <div className="box">
 
                 </div>
-                <Link to={{ pathname: '/user/Eachboards', state: { index: this.props.boardIndex } }}>
+                <Link replace={true} to={{ pathname: '/user/Eachboards', state: { index: this.props.boardIndex } }}>
                     <div className="boardname" onClick={this.handleClick.bind(this)}>
                         {this.props.name}
                     </div>

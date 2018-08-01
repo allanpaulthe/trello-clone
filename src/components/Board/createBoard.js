@@ -59,6 +59,7 @@ class UL extends Component {
                         listIndex={listIndex}
                         selectedNewBoardImage={this.props.selectedNewBoardImage}
                         changeBgPic={this.props.changeBgPic}
+                        key={i}
                     />
                 )}
             </ul>
@@ -96,7 +97,7 @@ class CreateBoard extends Component {
             return false;
         }
         else {
-            this.props.newBoard(this.state.title);
+            this.props.newBoard(this.state.title, this.props.selectedNewBoardImage);
         }
     }
     handleClose() {
@@ -144,6 +145,7 @@ class CreateBoard extends Component {
                                     listIndex={i}
                                     selectedNewBoardImage={this.props.selectedNewBoardImage}
                                     changeBgPic={this.props.changeBgPic}
+                                    key={i}
                                 />
                             )}
                         </div>
@@ -172,10 +174,11 @@ const mapDispatchToProps = (dispatch) => {
                 payload: 0
             })
         },
-        newBoard: (title) => {
+        newBoard: (title, BoardImage) => {
             dispatch({
                 type: "newBoard",
-                payload: title
+                payload: title,
+                BoardImage: BoardImage
             })
         },
         changeBgPic: (listId, elementId) => {

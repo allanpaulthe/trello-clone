@@ -14,7 +14,7 @@ class BoardBG extends Component {
             listTitle: ''
         };
     }
-    componentDidUpdate(){
+    componentDidUpdate() {
         let selectedBoardId = this.props.board.selectedBoardId;
         let imageListId = this.props.board.boards[selectedBoardId].BoardImage[0];
         let imageElementId = this.props.board.boards[selectedBoardId].BoardImage[1];
@@ -23,10 +23,13 @@ class BoardBG extends Component {
         document.getElementById('fullbody').style.maxHeight = '100vh';
         if (imageListId < 2) {
             document.getElementById('fullbody').style.backgroundImage = `url(${newBoardPic[imageListId][imageElementId]})`;
-            document.getElementById('fullbody').style.backgroundSize = '100vw 100vh';
+            document.getElementById('fullbody').style.backgroundSize = 'cover';
+            document.getElementById('fullbody').style.backgroundRepeat = 'no-repeat';
+            document.getElementById('fullbody').style.backgroundPosition = '50% 50%';
+            document.getElementById('fullbody').style.objectFit = 'cover';
         }
-        else{
-            document.getElementById('fullbody').style.backgroundImage='';
+        else {
+            document.getElementById('fullbody').style.backgroundImage = '';
             document.getElementById('fullbody').style.backgroundColor = newBoardPic[imageListId][imageElementId];
         }
     }
@@ -39,11 +42,15 @@ class BoardBG extends Component {
         document.getElementById('fullbody').style.maxHeight = '100vh';
         if (imageListId < 2) {
             document.getElementById('fullbody').style.backgroundImage = `url(${newBoardPic[imageListId][imageElementId]})`;
+            document.getElementById('fullbody').style.backgroundSize = 'cover';
+            document.getElementById('fullbody').style.backgroundRepeat = 'no-repeat';
+            document.getElementById('fullbody').style.backgroundPosition = '50% 50%';
+            document.getElementById('fullbody').style.objectFit = 'cover';
         }
-        else{
+        else {
+            document.getElementById('fullbody').style.backgroundImage = '';
             document.getElementById('fullbody').style.backgroundColor = newBoardPic[imageListId][imageElementId];
         }
-        document.getElementById('fullbody').style.backgroundSize = '100vw 100vh';
     }
     toggleNewList() {
         this.setState({
@@ -79,6 +86,7 @@ class BoardBG extends Component {
                         <CardContainer
                             category={x}
                             listId={i}
+                            key={i}
                         />
                     )}
                     <div className={clas1} onClick={this.toggleNewList.bind(this)}>

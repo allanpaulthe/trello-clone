@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ReactDOM from 'react-dom';
-import { list } from 'react-icons-kit/fa';
 
 class EditCard extends Component {
     constructor(props) {

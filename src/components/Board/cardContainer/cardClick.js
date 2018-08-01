@@ -47,6 +47,7 @@ class CardClick extends Component {
                         {[...commentList.map((x, i) =>
                             <SimpleComment
                                 comment={x.comment}
+                                key={i}
                             />
                         )]}
                     </div>

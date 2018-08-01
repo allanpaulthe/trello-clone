@@ -23,7 +23,7 @@ const boardReducer = (state, action) => {
             break;
         case "changeBgPic":
             state = {
-                ...state,
+                ...state
             };
             state.selectedNewBoardImage[0] = action.payload.listId;
             state.selectedNewBoardImage[1] = action.payload.elementId;
@@ -73,6 +73,7 @@ const boardReducer = (state, action) => {
             else {
                 state.boards[state.selectedBoardId].category[state.droppingListId].cards.splice(state.droppingCardId, 0, t);
             }
+            // eslint-disable-next-line 
             state.boards[state.selectedBoardId].category[state.draggingListId].cards = state.boards[state.selectedBoardId].category[state.draggingListId].cards.filter(function (n) { return n != undefined });
             break;
         case "setCardandLisId":
@@ -110,7 +111,7 @@ const boardReducer = (state, action) => {
                 starred: false,
                 date: "",
                 time: "",
-                BoardImage: state.selectedNewBoardImage,
+                BoardImage: action.BoardImage,
                 category: [
                     {
                         name: "Sample list",
@@ -124,6 +125,7 @@ const boardReducer = (state, action) => {
                     }
                 ]
             }
+            state.selectedNewBoardImage = [0, 0];
             state.boards.push(newBoard);
             break;
         case "newCard":
