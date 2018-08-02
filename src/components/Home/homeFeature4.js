@@ -10,7 +10,7 @@ class HomeFeature4 extends Component {
                     <div className="feature4-text">
                         <h2>Work With Any Team</h2>
                         <p>Whether it’s for work, a side project or even the next family vacation, Trello helps your team stay organized.</p>
-                        <a class="button pink-button" target="_blank"> Build Your Dream Team </a>
+                        <a className="button pink-button" target="_blank"> Build Your Dream Team </a>
                     </div>
                     <div className="feature4-pic">
                         <Picture

@@ -60,6 +60,7 @@
     "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/src/test-setup.js",
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
     ],
@@ -100,5 +101,10 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4"
   }
 }

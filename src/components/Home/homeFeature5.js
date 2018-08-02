@@ -10,7 +10,7 @@ class HomeFeature5 extends Component {
                     <div className="feature5-content-text">
                         <h2>A Productivity Platform</h2>
                         <p>Integrate the apps your team already uses directly into your workflow. Power-Ups turn Trello boards into living applications to meet your team's unique business needs.</p>
-                        <a href="" class="button blue-button"> Power-Up Your Workflow </a>
+                        <a href="" className="button blue-button"> Power-Up Your Workflow </a>
                     </div>
                     <div className="feature5-content-pic">
                         <Picture

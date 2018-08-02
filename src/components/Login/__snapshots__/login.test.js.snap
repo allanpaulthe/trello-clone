@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`login renders correctly 1`] = `
+<BrowserRouter>
+  <div>
+    <section
+      className="login-section"
+    >
+      <div
+        className="login-wrapper"
+      >
+        <div>
+          <h1>
+            Log in to Trello
+          </h1>
+          <span>
+            or 
+            <a>
+              create an account
+            </a>
+          </span>
+          <div>
+            <GoogleButton />
+            <p
+              onClick={[Function]}
+            >
+               
+              <a>
+                Log in with email and password
+              </a>
+               
+            </p>
+            <p>
+               
+              <a
+                href=""
+                tabindex="3"
+              >
+                Log in with SSO
+              </a>
+               
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <Footer />
+  </div>
+</BrowserRouter>
+`;

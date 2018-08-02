@@ -19,6 +19,9 @@ class LoginForm extends Component {
         let pass = this.state.password.toUpperCase();
         if (email === 'ALAN@GMAIL.COM' && pass === 'ALAN') {
             window.location.pathname = '/user/boards';
+            this.setState({
+                wrong: false
+            });
         }
         else {
             this.setState({

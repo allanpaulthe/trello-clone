@@ -11,8 +11,8 @@ class HomeFeature1 extends Component {
                     <p>Trello’s boards, lists, and cards enable you to organize and prioritize your projects in a fun, flexible and rewarding way. </p>
                     <Button text="Sign Up – It’s Free."/>
                 </div>
-                <div class="centered-feature1">
-                    <p class="small">Already use Trello? <a href="">Log in.</a> </p>
+                <div className="centered-feature1">
+                    <p className="small">Already use Trello? <a href="">Log in.</a> </p>
                 </div>
             </div>
         );
